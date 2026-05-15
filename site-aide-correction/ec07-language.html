@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="francais">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atelier international - Ministère de l'Accessibilité numérique</title>
+  <link rel="stylesheet" href="../assets/dsfr/dsfr.min.css">
+  <link rel="stylesheet" href="../assets/dsfr/utility/utility.min.css">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<div class="fr-skiplinks">
+  <nav role="navigation" class="fr-container" aria-label="Accès rapide">
+    <ul class="fr-skiplinks__list">
+      <li><a class="fr-link" href="#contenu">Aller au contenu</a></li>
+      <li><a class="fr-link" href="#navigation-principale">Aller au menu principal</a></li>
+      <li><a class="fr-link" href="#footer">Aller au pied de page</a></li>
+    </ul>
+  </nav>
+</div>
+<header role="banner" class="fr-header">
+  <div class="fr-header__body">
+    <div class="fr-container">
+      <div class="fr-header__body-row">
+        <div class="fr-header__brand fr-enlarge-link">
+          <div class="fr-header__brand-top">
+            <div class="fr-header__logo">
+              <p class="fr-logo">République<br>Française</p>
+            </div>
+          </div>
+          <div class="fr-header__service">
+            <a href="../index.html" title="Accueil - Ministère de l&#x27;Accessibilité numérique">
+              <p class="fr-header__service-title">Ministère de l&#x27;Accessibilité numérique</p>
+            </a>
+            <p class="fr-header__service-tagline">Formation IGPDE - Exercice points de contrôle rapides</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fr-header__menu fr-modal" id="modal-menu">
+    <div class="fr-container">
+      <nav class="fr-nav" role="navigation" aria-label="Menu principal" id="navigation-principale">
+        <ul class="fr-nav__list">
+        <li class="fr-nav__item"><a class="fr-nav__link" href="../index.html">Accueil</a></li>
+        <li class="fr-nav__item"><a class="fr-nav__link" href="../site-inaccessible/index.html">Site à auditer</a></li>
+        <li class="fr-nav__item"><a class="fr-nav__link" href="../site-aide-correction/index.html" aria-current="page">Aide à la correction</a></li>
+        <li class="fr-nav__item"><a class="fr-nav__link" href="../site-accessible/index.html">Site corrigé</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="fr-container">
+  <nav role="navigation" class="fr-breadcrumb fr-mt-3w" aria-label="vous êtes ici :">
+    <button type="button" class="fr-breadcrumb__button" aria-expanded="false" aria-controls="breadcrumb-help-ec07-language">Voir le fil d'Ariane</button>
+    <div class="fr-collapse" id="breadcrumb-help-ec07-language">
+      <ol class="fr-breadcrumb__list">
+        <li><a class="fr-breadcrumb__link" href="../index.html">Accueil</a></li>
+        <li><a class="fr-breadcrumb__link" href="index.html">Même site avec guidage pédagogique</a></li>
+        <li><a class="fr-breadcrumb__link" aria-current="page">Atelier international</a></li>
+      </ol>
+    </div>
+  </nav>
+</div>
+<main id="contenu" class="fr-container fr-py-6w">
+<div class="fr-grid-row">
+  <div class="fr-col-12 fr-col-md-8">
+  <h1>#7 Atelier international</h1>
+  <section class="fr-mb-6w" aria-labelledby="help-title">
+  <h2 id="help-title">Aide à la correction</h2>
+  <div class="fr-accordions-group">
+<section class="fr-accordion">
+  <h3 class="fr-accordion__title">
+    <button type="button" class="fr-accordion__btn" aria-expanded="false" aria-controls="ec07-language-help-1">Indice</button>
+  </h3>
+  <div class="fr-collapse" id="ec07-language-help-1">
+    <p>Inspecter la balise html, puis les expressions réellement rédigées dans une autre langue. Vérifier aussi que les codes utilisés sont des codes de langue, pas des noms complets ou des codes pays.</p>
+  </div>
+</section>
+<section class="fr-accordion">
+  <h3 class="fr-accordion__title">
+    <button type="button" class="fr-accordion__btn" aria-expanded="false" aria-controls="ec07-language-help-2">Ce qui pose problème</button>
+  </h3>
+  <div class="fr-collapse" id="ec07-language-help-2">
+    <p>La synthèse vocale ne sait pas quelle prononciation appliquer, ou applique une bascule de langue invalide. Quand un passage s&#x27;écrit de droite à gauche, l&#x27;absence de direction peut aussi perturber l&#x27;ordre de lecture.</p>
+    <p>Les cinq cas à qualifier sont :</p>
+    <ul>
+      <li>Langue principale : la balise html utilise une valeur invalide au lieu de lang=&quot;fr&quot;.</li>
+      <li>Passage anglais non balisé : « Fall / Winter accessibility workshop » reste dans le flux français.</li>
+      <li>Code invalide : lang=&quot;us&quot; désigne un pays, pas une langue ; le code attendu est lang=&quot;en&quot;.</li>
+      <li>Sens de lecture : le passage en arabe n&#x27;indique ni sa langue ni son sens de lecture de droite à gauche.</li>
+      <li>Faux ami : weekend, newsletter et e-mail sont des mots passés dans l&#x27;usage courant et ne doivent pas être balisés en anglais.</li>
+    </ul>
+  </div>
+</section>
+<section class="fr-accordion">
+  <h3 class="fr-accordion__title">
+    <button type="button" class="fr-accordion__btn" aria-expanded="false" aria-controls="ec07-language-help-3">Comment corriger</button>
+  </h3>
+  <div class="fr-collapse" id="ec07-language-help-3">
+    <p>Déclarer la langue principale avec lang=&quot;fr&quot;, baliser les vrais passages étrangers avec des codes ISO 639 valides, gérer le sens de lecture quand il change et éviter le sur-balisage des mots courants.</p>
+    <p>Corrections attendues par cas :</p>
+    <ul>
+      <li>Balise html : remplacer la valeur invalide par lang=&quot;fr&quot;.</li>
+      <li>Passages anglais : entourer les expressions anglaises utiles avec span lang=&quot;en&quot;.</li>
+      <li>Code langue : remplacer lang=&quot;us&quot; par lang=&quot;en&quot;.</li>
+      <li>Passage arabe : utiliser lang=&quot;ar&quot; et dir=&quot;rtl&quot; si ce cas est conservé dans l&#x27;exercice.</li>
+      <li>Mots courants : ne pas ajouter lang=&quot;en&quot; sur weekend, newsletter et e-mail.</li>
+    </ul>
+  </div>
+</section>
+  </div>
+</section>
+  <section aria-labelledby="content-title">
+  <h2 id="content-title">Atelier international</h2>
+  <p>Le ministère invite les référents à participer au Fall / Winter accessibility workshop consacré aux contrôles rapides. Cette session rassemble des équipes françaises et européennes. Les supports seront relus avant diffusion pour éviter les ambiguïtés de prononciation.</p>
+  <p>Le discours d'ouverture de nos partenaires internationaux aura pour thème : <span lang="us">Accessibility for all</span>. Les intervenants présenteront ce thème lors de la séance commune. Une synthèse sera ajoutée au compte rendu de l'atelier.</p>
+  <p>La documentation de cette séance sera également traduite en arabe : ورشة عمل دولية. Les supports correspondants seront transmis aux participants inscrits. Une version relue sera publiée dans l'espace documentaire.</p>
+  <p>La séance alterne retours d'expérience et exemples internationaux. À l'issue du weekend, une newsletter récapitulative vous sera envoyée par e-mail. Elle reprendra les ressources citées pendant l'atelier.</p>
+</section>
+  </div>
+</div>
+</main>
+<footer class="fr-footer" role="contentinfo" id="footer">
+  <div class="fr-container">
+    <div class="fr-footer__body">
+      <div class="fr-footer__brand fr-enlarge-link">
+        <p class="fr-logo">République<br>Française</p>
+      </div>
+      <div class="fr-footer__content">
+        <p class="fr-footer__content-desc">Exercice pédagogique IGPDE sur les points de contrôle rapides du W3C.</p>
+        <ul class="fr-footer__content-list">
+          <li class="fr-footer__content-item"><a class="fr-footer__content-link" href="../index.html">Accueil</a></li>
+          <li class="fr-footer__content-item"><a class="fr-footer__content-link" href="../index.html#apres-exercice">Après l'exercice</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fr-footer__bottom">
+      <ul class="fr-footer__bottom-list">
+        <li class="fr-footer__bottom-item"><a class="fr-footer__bottom-link" href="../plan-du-site.html">Plan du site</a></li>
+        <li class="fr-footer__bottom-item"><a class="fr-footer__bottom-link" href="../accessibilite.html">Accessibilité : non conforme</a></li>
+        <li class="fr-footer__bottom-item"><a class="fr-footer__bottom-link" href="../mentions-legales.html">Mentions légales</a></li>
+        <li class="fr-footer__bottom-item"><a class="fr-footer__bottom-link" href="../donnees-personnelles.html">Données personnelles</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script type="module" src="../assets/dsfr/dsfr.module.min.js"></script>
+<script nomodule src="../assets/dsfr/dsfr.nomodule.min.js"></script>
+</body>
+</html>
